@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#0f766e" />
+  <title>Gym Companion</title>
+  <link rel="manifest" href="manifest.json" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="app-header">
+    <h1 id="screenTitle">Gym Companion</h1>
+    <div id="weekBadge" class="badge">Week 1</div>
+  </header>
+
+  <main id="app"><!-- screens render here --></main>
+
+  <nav class="tabbar">
+    <button class="tab active" data-screen="today">🏋️<span>Today</span></button>
+    <button class="tab" data-screen="plan">📅<span>Plan</span></button>
+    <button class="tab" data-screen="library">📚<span>Moves</span></button>
+    <button class="tab" data-screen="progress">📈<span>Progress</span></button>
+    <button class="tab" data-screen="nutrition">🥗<span>Food</span></button>
+  </nav>
+
+  <script src="exercises.js"></script>
+  <script src="plan.js"></script>
+  <script src="app.js"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => navigator.serviceWorker.register('sw.js'));
+    }
+  </script>
+</body>
+</html>
